@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Force Directed Graph</title>
+	<link href="/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/css/app.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="navbar navbar-inverse">
+		<div class="navbar-inner">
+			<div class="container" style="width: auto;">
+				<a class="brand" href="/ForceDirectedGraph.html">Force Directed Graph</a>
+				<div style="padding-top:10px;">
+					<select id="count" class="refresh span1">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>10</option>
+					</select>
+					<select id="type" class="refresh span2">
+						<option>swarm</option>
+						<option>molecule</option>
+						<option>blossom</option>
+					</select>
+					that
+					<select id="edge" class="refresh span2">
+						<option value="bounce">bounces off</option>
+						<option value="wrap">wraps around</option>
+					</select>
+					the edges
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="screen"></div>
+	<i>Click on the screen to toggle Mouse attractor</i>
+</body>
+
+
+<script src="/js/jquery-2.0.0.min.js"> </script>
+<script src="/js/processing-1.4.1.min.js"> </script>
+<script src="/js/bootstrap.min.js"> </script>
+<script src="/js/force-directed-graph.js"> </script>
+
+</html>
