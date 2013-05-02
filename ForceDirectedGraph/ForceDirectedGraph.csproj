@@ -65,113 +65,112 @@
     <Content Include="img\glyphicons-halflings-white.png" />
     <Content Include="img\glyphicons-halflings.png" />
     <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\Bot.js" />
     <Content Include="js\force-directed-graph.js" />
     <Content Include="js\jquery-2.0.0.min.js" />
     <Content Include="js\processing-1.4.1.min.js" />
-    <Content Include="js\Rnd.js" />
-    <Content Include="js\Vector.js" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="coffee\Bot.coffee">
+    <None Include="coffee\Bot.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
       <Iced>False</Iced>
       <OutputFolder>..\assets\js\temp</OutputFolder>
-    </Content>
-    <Content Include="coffee\Vector.coffee">
+    </None>
+    <None Include="coffee\Vector.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
       <Iced>False</Iced>
       <OutputFolder>..\assets\js\temp</OutputFolder>
-    </Content>
-    <Content Include="coffee\force\Mouse.coffee">
+    </None>
+    <None Include="coffee\force\Mouse.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
       <Iced>False</Iced>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="coffee\force-directed-graph.coffee">
+    <None Include="coffee\force-directed-graph.coffee">
       <Compile>True</Compile>
       <Minify>True</Minify>
       <OutputFolder>..\assets\js</OutputFolder>
       <Bare>False</Bare>
       <Iced>False</Iced>
       <IncludedFiles>domain\Bot.coffee|domain\force\Magnet.coffee|domain\force\Spring.coffee|domain\force\Random.coffee|domain\Trace.coffee|domain\Vector.coffee|domain\force\Drag.coffee|domain\force\Mouse.coffee|domain\Rnd.coffee|domain\force\EdgeBounce.coffee|domain\force\EdgeWrap.coffee</IncludedFiles>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="coffee\force\Spring.coffee">
+    <None Include="coffee\force\Spring.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
       <Bare>False</Bare>
       <Iced>False</Iced>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="coffee\force\Random.coffee">
+    <None Include="coffee\force\Random.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
       <Iced>False</Iced>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="coffee\force\Magnet.coffee">
+    <None Include="coffee\force\Magnet.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
       <Bare>False</Bare>
       <Iced>False</Iced>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="coffee\force\Drag.coffee">
+    <None Include="coffee\force\Drag.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
       <Iced>False</Iced>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="coffee\force\EdgeWrap.coffee">
+    <None Include="coffee\force\EdgeWrap.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
       <Bare>False</Bare>
       <Iced>False</Iced>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="coffee\Rnd.coffee">
+    <None Include="coffee\Rnd.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\assets\js\temp</OutputFolder>
       <Bare>False</Bare>
       <Iced>False</Iced>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="coffee\force\EdgeBounce.coffee">
+    <None Include="coffee\force\EdgeBounce.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
       <Bare>False</Bare>
       <Iced>False</Iced>
-    </Content>
+    </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\FDG.pubxml" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
