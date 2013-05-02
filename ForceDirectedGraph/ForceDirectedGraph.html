@@ -6,25 +6,26 @@
 	<link href="/css/app.css" rel="stylesheet" />
 </head>
 <body>
-	<div class="navbar navbar-inverse" style="width:855px">
+	<div class="navbar navbar-inverse" style="width: 855px">
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="brand" href="/ForceDirectedGraph.html">Force Directed Graph</a>
-				<div style="padding-top:10px;">
-					<select id="count" class="refresh span1">
+				<div style="padding-top: 10px;">
+					<select id="count" class="restart span1">
 						<option>1</option>
 						<option>2</option>
 						<option>3</option>
 						<option>4</option>
 						<option>10</option>
 					</select>
-					<select id="type" class="refresh span2">
+					<select id="type" class="restart span2">
+						<option>spokes</option>
 						<option>swarm</option>
 						<option>molecule</option>
 						<option>blossom</option>
 					</select>
 					that
-					<select id="edge" class="refresh span2">
+					<select id="edge" class="restart span2">
 						<option value="bounce">bounces off</option>
 						<option value="wrap">wraps around</option>
 					</select>
@@ -33,8 +34,29 @@
 			</div>
 		</div>
 	</div>
-
 	<div id="screen"></div>
+	<div class="navbar navbar-inverse" style="width: 855px">
+		<div class="navbar-inner">
+			<div class="container">
+				<ul class="nav">
+					<li style="padding:20px 20px 0 0">
+						Noise
+						<select id="noise" class="refresh span1">
+							<option>0</option>
+							<option>1</option>
+							<option>2</option>
+							<option>4</option>
+							<option>8</option>
+						</select>
+					</li>
+					<li style="padding:12px">
+						<label class="checkbox"><input type="checkbox" id="springs" class="refresh" checked> Springs</label>
+						<label class="checkbox"><input type="checkbox" id="magnets" class="refresh" checked> Magnets</label>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
 	<i>Click on the screen to toggle Mouse attractor</i>
 </body>
 

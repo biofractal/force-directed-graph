@@ -1,55 +1,28 @@
-#= require force\Drag.coffee
-#= require force\EdgeBounce.coffee
-#= require force\EdgeWrap.coffee
-#= require force\Magnet.coffee
-#= require force\Mouse.coffee
-#= require force\Random.coffee
-#= require force\Spring.coffee
-#= require Bot.coffee
-#= require Rnd.coffee
-#= require Vector.coffee
+#= require class\force\Drag.coffee
+#= require class\force\EdgeBounce.coffee
+#= require class\force\EdgeWrap.coffee
+#= require class\force\Magnet.coffee
+#= require class\force\Mouse.coffee
+#= require class\force\Noise.coffee
+#= require class\force\Spring.coffee
+#= require class\Bot.coffee
+#= require class\Rnd.coffee
+#= require class\Vector.coffee
 
 bots = []
-mouseOn = true
 edge = EdgeBounce
 
 main=(processing)->
 	p = processing
 	p.setup=setupProcessing p
-	setupForces()
-	setupBots()
+	setupForceConstants()
+	restart()
 	p.draw=->
 		p.background 51
 		applyForces bot for bot in bots
 		bot.move() for bot in bots
-		bot.drawLines() for bot in bots
+		bot.drawLines() for bot in bots if Spring.isActive
 		bot.drawShape() for bot in bots
-
-applyForces=(bot)->
-	Drag.applyForce bot
-	Spring.applyForce bot, friend for friend in bot.friends
-	Magnet.applyForce bot, other for other in bots when other!=bot
-	Mouse.applyForce bot if mouseOn
-	edge.applyForce bot
-
-setupForces=->
-	Magnet.k = 10
-	Drag.k = 0.05
-	Spring.k = 0.01
-	Spring.restLength = 40
-
-setupBots=->
-	bots=[]
-	switch $('#edge').val()
-		when 'bounce' then edge = EdgeBounce
-		when 'wrap' then edge = EdgeWrap
-	
-	count = parseInt $('#count').val()
-	switch $('#type').val()
-		when 'swarm' then bots = bots.concat connectSwarm() for i in [1..count]
-		when 'molecule' then bots = bots.concat connectMolecule() for i in [1..count]
-		when 'blossom' then bots = bots.concat connectBlossom() for i in [1..count]
-	bots
 
 setupProcessing=(p)->
 	p.width = 855
@@ -60,8 +33,52 @@ setupProcessing=(p)->
 	window.midX = (p.width/2)>>0
 	window.midY = (p.height/2)>>0
 	window.processing = p
-	p.mousePressed = -> 
-		mouseOn = not mouseOn
+	p.mousePressed = -> Mouse.isActive = !Mouse.isActive
+	null
+
+setupForceConstants=->
+	Drag.k = 0.05
+	Magnet.k = 10
+	Spring.restLength = 40
+	Spring.k = 0.01
+
+
+restart=->
+	refresh()
+	setupBots()
+
+refresh=->	
+	switch $('#edge').val()
+		when 'bounce' then edge = EdgeBounce
+		when 'wrap' then edge = EdgeWrap
+
+	Noise.scale = $('#noise').val()
+	Magnet.isActive = $('#magnets').is(':checked')
+	Spring.isActive = $('#springs').is(':checked')
+
+setupBots=->
+	bots=[]
+	count = parseInt $('#count').val()
+	switch $('#type').val()
+		when 'spokes' then bots = bots.concat connectSpokes() for i in [1..count]
+		when 'swarm' then bots = bots.concat connectSwarm() for i in [1..count]
+		when 'molecule' then bots = bots.concat connectMolecule() for i in [1..count]
+		when 'blossom' then bots = bots.concat connectBlossom() for i in [1..count]
+	bots
+
+applyForces=(bot)->
+	Spring.applyForce bot, friend for friend in bot.friends if Spring.isActive
+	Magnet.applyForce bot, other for other in bots when other!=bot if Magnet.isActive
+	Mouse.applyForce bot if Mouse.isActive
+	Drag.applyForce bot 
+	Noise.applyForce bot
+	edge.applyForce bot
+
+connectSpokes=->
+	b1 = new Bot 4
+	b2 = (new Bot 4 for i in [0...10])
+	b1.friends = b2
+	b2.concat b1
 
 connectSwarm=->
 	b1 = new Bot 6
@@ -196,6 +213,7 @@ connectBlossom=->
 	a.concat b0, b1, c0, c1, c2, c3, c4, c5, c6, c7, d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, d31
 
 $ -> 
-	$('.refresh').change setupBots
+	$('.restart').change restart
+	$('.refresh').change refresh
 	canvas = $('<canvas id="processing-canvas">').appendTo($('#screen'))[0]
 	x = new Processing canvas, main

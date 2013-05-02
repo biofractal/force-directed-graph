@@ -1,8 +1,10 @@
 class Spring
+	@isActive=true
 	@k=0.01
 	@restLength=50
 
 	@applyForce=(bot1, bot2)->
+		return if not Magnet.isActive
 		force = Vector.sub bot1.location, bot2.location
 		currentLength = force.mag()
 		distance = Spring.restLength - currentLength

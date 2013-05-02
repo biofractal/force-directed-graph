@@ -73,21 +73,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\Bot.coffee">
+    <None Include="coffee\class\Bot.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
       <Iced>False</Iced>
       <OutputFolder>..\assets\js\temp</OutputFolder>
     </None>
-    <None Include="coffee\Vector.coffee">
+    <None Include="coffee\class\Vector.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
       <Iced>False</Iced>
       <OutputFolder>..\assets\js\temp</OutputFolder>
     </None>
-    <None Include="coffee\force\Mouse.coffee">
+    <None Include="coffee\class\force\Mouse.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
@@ -106,7 +106,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\force\Spring.coffee">
+    <None Include="coffee\class\force\Spring.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
@@ -115,7 +115,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\force\Random.coffee">
+    <None Include="coffee\class\force\Noise.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
@@ -124,7 +124,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\force\Magnet.coffee">
+    <None Include="coffee\class\force\Magnet.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
@@ -133,7 +133,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\force\Drag.coffee">
+    <None Include="coffee\class\force\Drag.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
@@ -142,7 +142,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\force\EdgeWrap.coffee">
+    <None Include="coffee\class\force\EdgeWrap.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
@@ -151,7 +151,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\Rnd.coffee">
+    <None Include="coffee\class\Rnd.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\assets\js\temp</OutputFolder>
@@ -160,7 +160,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\force\EdgeBounce.coffee">
+    <None Include="coffee\class\force\EdgeBounce.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>

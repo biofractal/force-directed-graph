@@ -1,6 +1,9 @@
 class Magnet
+	@isActive=true
 	@k=1
+
 	@applyForce=(bot1, bot2)->
+		return if not Magnet.isActive
 		force = Vector.sub bot1.location, bot2.location
 		distance = force.mag()
 		force.normalize()
