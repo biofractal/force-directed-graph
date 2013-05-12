@@ -1,12 +1,13 @@
 class Rnd
 	@gate=(chance) ->
-		(Math.random() * 100) < chance
+		passed = (Math.random() * 100) < chance
+		return passed
 
 	@next=(max=1, min=0) ->
 		(Math.random() * max) + min
 
-	@location=->
-		new Vector(Rnd.next(window.width), Rnd.next(window.height))
+	@location=(margin=0)->
+		new Vector(Rnd.next(window.width-margin, margin), Rnd.next(window.height-margin, margin))
 
 	@velocity=->
 		new Vector(Rnd.next(20)*Rnd.sign(), Rnd.next(20)*Rnd.sign())

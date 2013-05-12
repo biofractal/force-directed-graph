@@ -59,13 +59,16 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="coffee\common\domain.min.js" />
+    <Content Include="Flock.html" />
     <Content Include="css\app.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="ForceDirectedGraph.html" />
     <Content Include="img\glyphicons-halflings-white.png" />
     <Content Include="img\glyphicons-halflings.png" />
     <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\force-directed-graph.js" />
+    <Content Include="js\flock.min.js" />
+    <Content Include="js\force-directed-graph.min.js" />
     <Content Include="js\jquery-2.0.0.min.js" />
     <Content Include="js\processing-1.4.1.min.js" />
   </ItemGroup>
@@ -73,21 +76,26 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\class\Bot.coffee">
+    <Content Include="coffee\flock.coffee" />
+    <Content Include="coffee\common\domain.coffee" />
+    <None Include="coffee\domain\Bot.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
       <Iced>False</Iced>
       <OutputFolder>..\assets\js\temp</OutputFolder>
     </None>
-    <None Include="coffee\class\Vector.coffee">
+    <Content Include="coffee\domain\BotBuilder.coffee" />
+    <Content Include="coffee\domain\Attractor.coffee" />
+    <Content Include="coffee\domain\Repulsor.coffee" />
+    <None Include="coffee\domain\Vector.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
       <Iced>False</Iced>
       <OutputFolder>..\assets\js\temp</OutputFolder>
     </None>
-    <None Include="coffee\class\force\Mouse.coffee">
+    <None Include="coffee\domain\force\Mouse.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
@@ -106,7 +114,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\class\force\Spring.coffee">
+    <None Include="coffee\domain\force\Spring.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
@@ -115,7 +123,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\class\force\Noise.coffee">
+    <None Include="coffee\domain\force\Noise.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
@@ -124,7 +132,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\class\force\Magnet.coffee">
+    <None Include="coffee\domain\force\Magnet.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
@@ -133,7 +141,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\class\force\Drag.coffee">
+    <None Include="coffee\domain\force\Drag.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
@@ -142,7 +150,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\class\force\EdgeWrap.coffee">
+    <None Include="coffee\domain\force\EdgeWrap.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
@@ -151,7 +159,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\class\Rnd.coffee">
+    <None Include="coffee\domain\Rnd.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\assets\js\temp</OutputFolder>
@@ -160,7 +168,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="coffee\class\force\EdgeBounce.coffee">
+    <None Include="coffee\domain\force\EdgeBounce.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <OutputFolder>..\..\assets\js\temp</OutputFolder>
@@ -198,7 +206,8 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PreBuildEvent>CD "$(SolutionDir)Tools\JurassicCoffee"
-CALL JurassicCoffee.Console.exe "$(ProjectDir)coffee" -c -o "$(ProjectDir)js"</PreBuildEvent>
+CALL JurassicCoffee.Console.exe "$(ProjectDir)coffee\common\domain.coffee"
+CALL JurassicCoffee.Console.exe "$(ProjectDir)coffee" -o "$(ProjectDir)js"</PreBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

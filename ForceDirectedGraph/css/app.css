@@ -1,4 +1,29 @@
 ﻿body {
-  padding-top: 20px;
-  padding-left: 20px;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+label.checkbox {
+	margin-top:10px;
+	display: inline-block;
+}
+
+
+.option-bar {
+	padding-top:5px;
+}
+
+.option-bar span {
+	margin-left:15px;
+	margin-right:5px;
+	margin-top:0px;
+}
+
+.option-bar select {
+	margin-top:5px;
+}
+
+
+.option-bar .btn {
+	margin-bottom:15px;
 }

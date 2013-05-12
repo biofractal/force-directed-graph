@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>Flock</title>
+	<link href="/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="/css/app.css" rel="stylesheet" />
+</head>
+<body>
+	<div class="navbar navbar-inverse" style="width: 855px">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="#">Electro-Flock</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav">
+						<li class="active">
+							<a href="http://biofractal.blogspot.co.uk/2013/05/self-organising-fun-electro-flock.html">Help</a>
+						</li>
+					</ul>
+					<div class="option-bar">
+						<span>Bots</span>
+						<select id="bot-count" class="reset-bots" style="width: 75px">
+							<option>50</option>
+							<option>75</option>
+							<option>100</option>
+							<option>200</option>
+						</select>
+						<span>Attractors</span>
+						<select id="attractor-count" class="reset-attractors" style="width: 60px">
+							<option>2</option>
+							<option>5</option>
+							<option>10</option>
+							<option>20</option>
+						</select>
+						<span>Obstacles</span>
+						<select id="obstacle-count" class="reset-obstacles span1">
+							<option>0</option>
+							<option selected>5</option>
+							<option>10</option>
+							<option>20</option>
+						</select>
+						<span><a id="reset-obstacles" class="btn" href="#">Reset Obstacles</a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="screen"></div>
+	<div class="navbar navbar-inverse" style="width: 855px">
+		<div class="navbar-inner">
+			<div class="container">
+				<div class="nav-collapse collapse">
+					<div class="option-bar">
+						<span><label class="checkbox"><input type="checkbox" id="attractor-show" class="reset-attractors">Show Attractors</label></span>
+						<span><label class="checkbox"><input type="checkbox" id="obstacle-show" class="reset-obstacles" checked>Show Obstacles</label></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script src="/js/jquery-2.0.0.min.js"> </script>
+<script src="/js/processing-1.4.1.min.js"> </script>
+<script src="/js/bootstrap.min.js"> </script>
+<script src="/js/flock.min.js"> </script>
+
+</html>

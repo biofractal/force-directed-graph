@@ -6,26 +6,27 @@ class Bot
 		@location = Rnd.location()
 		@friends = []
 		
-	drawShape:()->
+	drawShape:->
 		@p.pushMatrix()
 		@p.translate @location.x, @location.y
 		@p.rotate @velocity.heading();
 		@p.scale 0.5 + @mass/8
+		@p.fill 128, 255, 128
 		@p.stroke 0, 255, 0
 		@p.triangle -4, 4, 8, 0, -4, -4
 		@p.popMatrix()
 
-	drawLines:()->
+	drawLines:->
 		@p.pushMatrix()
 		@p.stroke 75
 		@p.line(@location.x, @location.y, f.location.x, f.location.y) for f in @friends
 		@p.popMatrix()
 
-	move:()->
+	move:->
 		@velocity.add @acceleration 
-		@velocity.limit 10
+		@velocity.limit 3
 		@location.add @velocity
 		@acceleration.mult 0
 
-	applyForce:(force)->
+	accelerate:(force)->
 		@acceleration.add Vector.div(force, @mass)

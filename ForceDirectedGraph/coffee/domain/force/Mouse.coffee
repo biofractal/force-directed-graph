@@ -1,11 +1,11 @@
 class Mouse
 	@isActive=false
-	@k=0.7
-	@applyForce=(bot)->
+
+	@applyForce=(bot, k = 0.7)->
 		return if not Mouse.isActive
 		p = window.processing
 		vm = new Vector p.mouseX, p.mouseY
-		direction = Vector.sub vm , bot.location
+		direction = Vector.sub vm, bot.location
 		direction.normalize()
-		direction.mult Mouse.k
-		bot.applyForce direction
+		direction.mult k
+		bot.accelerate direction
