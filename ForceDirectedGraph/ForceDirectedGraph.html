@@ -10,26 +10,28 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="brand" href="/ForceDirectedGraph.html">Force Directed Graph</a>
-				<div style="padding-top: 10px;">
-					<select id="count" class="restart span1">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>10</option>
-					</select>
-					<select id="type" class="restart span2">
-						<option>spokes</option>
-						<option>swarm</option>
-						<option>molecule</option>
-						<option>blossom</option>
-					</select>
-					that
-					<select id="edge" class="refresh span2">
-						<option value="bounce">bounces off</option>
-						<option value="wrap">wraps around</option>
-					</select>
-					the edges
+				<div class="nav-collapse collapse">
+					<div class="option-bar">
+						<select id="count" class="reset-bots span1">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>10</option>
+						</select>
+						<select id="type" class="reset-bots span2">
+							<option>spokes</option>
+							<option>swarm</option>
+							<option>molecule</option>
+							<option>blossom</option>
+						</select>
+						<span>that</span>
+						<select id="edge" class="reset-options span2">
+							<option value="bounce">bounces off</option>
+							<option value="wrap">wraps around</option>
+						</select>
+						<span>the edges</span>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -38,25 +40,21 @@
 	<div class="navbar navbar-inverse" style="width: 855px">
 		<div class="navbar-inner">
 			<div class="container">
-				<ul class="nav">
-					<li style="padding:12px">
-						Noise
-						<select id="noise" class="refresh span1">
+				<div class="nav-collapse collapse">	
+					<div class="option-bar">
+						<span>Noise</span>
+						<select id="noise-scale" class="reset-options span1">
 							<option>0</option>
 							<option>1</option>
 							<option>2</option>
-							<option>4</option>
-							<option>8</option>
+							<option>3</option>
+							<option>10</option>
 						</select>
-					</li>
-					<li style="padding:15px">
-						<label class="checkbox"><input type="checkbox" id="springs" class="refresh" checked> Springs</label>
-					</li>
-					<li style="padding:15px">
-						<label class="checkbox"><input type="checkbox" id="magnets" class="refresh" checked> Magnets</label>
-					</li>
-					<li><a href="http://biofractal.blogspot.co.uk/2013/05/self-organising-fun-force-directed.html" target="_blank">Help</a></li>
-				</ul>
+						<span><label class="checkbox"><input type="checkbox" id="springs-active" class="reset-options" checked>Springs</label></span>
+						<span><label class="checkbox"><input type="checkbox" id="magnets-active" class="reset-options" checked>Magnets</label></span>
+						<span class="pull-right"><a class="btn" href="http://biofractal.blogspot.co.uk/2013/05/self-organising-fun-force-directed.html">Help</a></span>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

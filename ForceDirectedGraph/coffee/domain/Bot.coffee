@@ -1,6 +1,6 @@
 class Bot
 	constructor:(@mass = (Math.random() * 10)+1)->
-		@p = window.processing
+		@p = Animator.processing
 		@acceleration = new Vector
 		@velocity = Rnd.velocity()
 		@location = Rnd.location()

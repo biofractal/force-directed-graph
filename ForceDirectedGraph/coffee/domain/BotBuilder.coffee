@@ -25,11 +25,11 @@ class BotBuilder
 		h3 = (new Bot 3 for h in [0...2])
 		h4 = (new Bot 3 for h in [0...2])
 		h5 = (new Bot 3 for h in [0...3])
-		c[0].friends =h0.concat [c[1]]
-		c[1].friends =h1.concat [c[2]]
-		c[2].friends =h2.concat [c[3]]
-		c[3].friends =h3.concat [c[4]]
-		c[4].friends =h4.concat [c[5]]
+		c[0].friends = h0.concat [c[1]]
+		c[1].friends = h1.concat [c[2]]
+		c[2].friends = h2.concat [c[3]]
+		c[3].friends = h3.concat [c[4]]
+		c[4].friends = h4.concat [c[5]]
 		c[5].friends =h5
 		c.concat h0, h1, h2, h3, h4, h5
 

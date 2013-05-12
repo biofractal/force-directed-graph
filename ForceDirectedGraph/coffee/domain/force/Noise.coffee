@@ -1,5 +1,5 @@
 class Noise
-	@isActive = false
+	@isActive = true
 
 	@applyForce=(bot, chance = 5, scale = 2)->
 		return if not @isActive or scale==0 or Rnd.gate(100-chance)

@@ -1,7 +1,7 @@
 class Attractor
 	@isVisible = true
 	constructor:->
-		@p = window.processing
+		@p = Animator.processing
 		@mass = 2
 		@acceleration = new Vector
 		@velocity = Rnd.velocity()

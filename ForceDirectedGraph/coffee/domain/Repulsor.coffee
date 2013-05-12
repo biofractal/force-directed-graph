@@ -1,7 +1,7 @@
 class Repulsor
 	@isVisible = true
 	constructor:->
-		@p = window.processing
+		@p = Animator.processing
 		@mass = Rnd.next 500, 200
 		@size = @mass/10
 		@location = Rnd.location @size

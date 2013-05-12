@@ -7,6 +7,7 @@
 #= require ..\domain\force\Noise.coffee
 #= require ..\domain\force\Spring.coffee
 
+#= require ..\domain\Animator.coffee
 #= require ..\domain\Attractor.coffee
 #= require ..\domain\Repulsor.coffee
 #= require ..\domain\Bot.coffee

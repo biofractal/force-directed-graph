@@ -13,9 +13,8 @@ $ ->
 	canvas = $('<canvas id="processing-canvas">').appendTo($('#screen'))[0]
 	x = new Processing canvas, main
 
-main=(processing)->
-	p = processing
-	p.setup = setupProcessing p
+main=(p)->
+	Animator.setup p
 	resetObstacles()
 	resetAttractors()
 	resetBots()
@@ -24,17 +23,6 @@ main=(processing)->
 		processObstacles()
 		processAttractors()
 		processBots()
-
-setupProcessing=(p)->
-	p.width = 855
-	p.height = 500
-	p.background 51
-	window.width = p.width
-	window.height = p.height
-	window.midX = (p.width/2)>>0
-	window.midY = (p.height/2)>>0
-	window.processing = p
-	null
 
 processObstacles=->
 	obstacle.drawShape() for obstacle in obstacles if Repulsor.isVisible
