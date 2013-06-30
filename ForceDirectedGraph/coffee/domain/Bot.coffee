@@ -9,7 +9,7 @@ class Bot
 	drawShape:->
 		@p.pushMatrix()
 		@p.translate @location.x, @location.y
-		@p.rotate @velocity.heading();
+		@p.rotate @velocity.heading()
 		@p.scale 0.5 + @mass/8
 		@p.fill 128, 255, 128
 		@p.stroke 0, 255, 0
@@ -24,7 +24,7 @@ class Bot
 
 	move:->
 		@velocity.add @acceleration 
-		@velocity.limit 3
+		@velocity.limit 5
 		@location.add @velocity
 		@acceleration.mult 0
 

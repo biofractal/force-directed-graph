@@ -1,5 +1,5 @@
 class Attractor
-	@isVisible = true
+	@isActive = true
 	constructor:->
 		@p = Animator.processing
 		@mass = 2
@@ -11,7 +11,7 @@ class Attractor
 	move:->
 		@changeVector()
 		@velocity.add @acceleration 
-		@velocity.limit 3
+		@velocity.limit 5
 		@location.add @velocity
 		@acceleration.mult 0
 
@@ -24,7 +24,7 @@ class Attractor
 		@accelerate new Vector x, y
 
 	drawShape:->
-		return if !Attractor.isVisible
+		return if !Attractor.isActive
 		@p.pushMatrix()
 		@p.translate @location.x, @location.y
 		@p.rotate @velocity.heading();

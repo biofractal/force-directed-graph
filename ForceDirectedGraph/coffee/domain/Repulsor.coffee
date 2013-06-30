@@ -1,5 +1,5 @@
 class Repulsor
-	@isVisible = true
+	@isActive = true
 	constructor:->
 		@p = Animator.processing
 		@mass = Rnd.next 500, 200
@@ -7,7 +7,7 @@ class Repulsor
 		@location = Rnd.location @size
 
 	drawShape:->
-		return if !Repulsor.isVisible
+		return if !Repulsor.isActive
 		@p.pushMatrix()
 		@p.fill 102
 		@p.stroke 128, 64, 64

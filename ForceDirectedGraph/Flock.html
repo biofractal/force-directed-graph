@@ -6,34 +6,38 @@
 	<link href="/css/app.css" rel="stylesheet" />
 </head>
 <body>
+	<ul class="nav nav-pills">
+		<li><a href="/forcedirectedgraph.html">Force Directed Graph</a></li>
+		<li class="divider-vertical"></li>
+		<li class="active"><a href="/flock.html">Electro-Flock</a></li>
+	</ul>
 	<div class="navbar navbar-inverse" style="width: 855px">
 		<div class="navbar-inner">
 			<div class="container">
-				<a class="brand" href="/Flock.html">Electro-Flock</a>
 				<div class="nav-collapse collapse">
 					<div class="option-bar">
-						<span>Bots</span>
 						<select id="bot-count" class="reset-bots" style="width: 75px">
 							<option>50</option>
 							<option>75</option>
-							<option>100</option>
+							<option selected>100</option>
 							<option>200</option>
 						</select>
-						<span>Attractors</span>
+						<span>Bots chasing</span>
 						<select id="attractor-count" class="reset-attractors" style="width: 60px">
 							<option>2</option>
+							<option selected>5</option>
+							<option>10</option>
+							<option>20</option>
+						</select>
+						<span>Attractors whilst avoiding</span>
+						<select id="obstacle-count" class="reset-obstacles span1">
+							<option>0</option>
+							<option selected>2</option>
 							<option>5</option>
 							<option>10</option>
 							<option>20</option>
 						</select>
 						<span>Obstacles</span>
-						<select id="obstacle-count" class="reset-obstacles span1">
-							<option>0</option>
-							<option selected>5</option>
-							<option>10</option>
-							<option>20</option>
-						</select>
-						<span><a id="reset-obstacles" class="btn" href="#">Reset Obstacles</a></span>
 					</div>
 				</div>
 			</div>
@@ -45,14 +49,22 @@
 			<div class="container">
 				<div class="nav-collapse collapse">
 					<div class="option-bar">
-						<span><label class="checkbox"><input type="checkbox" id="attractor-show" class="reset-attractors">Show Attractors</label></span>
-						<span><label class="checkbox"><input type="checkbox" id="obstacle-show" class="reset-obstacles" checked>Show Obstacles</label></span>
-						<span class="pull-right"><a class="btn" href="http://biofractal.blogspot.co.uk/2013/05/self-organising-fun-force-directed.html">Help</a></span>
+						<span>
+							<label class="checkbox">
+								<input type="checkbox" id="attractors-active" class="reset-attractors" checked>Attractors</label></span>
+						<span>
+							<label class="checkbox">
+								<input type="checkbox" id="obstacles-active" class="reset-obstacles" checked>Obstacles</label></span>
+						<span class="pull-right">
+							<a id="reset-obstacles" class="btn" href="#">Reset Obstacles</a>
+							<a class="btn" href="http://biofractal.blogspot.co.uk/2013/05/self-organising-fun-force-directed.html">Help</a>
+						</span>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 </body>
 
 <script src="/js/jquery-2.0.0.min.js"> </script>

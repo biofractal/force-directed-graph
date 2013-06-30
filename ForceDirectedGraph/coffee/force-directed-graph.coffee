@@ -8,7 +8,7 @@ $ ->
 	$('.reset-bots').change resetBots
 	$('.reset-options').change resetOptions
 	canvas = $('<canvas id="processing-canvas">').appendTo($('#screen'))[0]
-	x = new Processing canvas, main
+	new Processing canvas, main
 
 main=(p)->
 	Animator.setup p
@@ -41,6 +41,7 @@ processBots=->
 	bot.move() for bot in bots
 	bot.drawLines() for bot in bots if Spring.isActive
 	bot.drawShape() for bot in bots
+	Mouse.drawShape() if Mouse.isActive
 
 applyForces=(bot)->
 	Spring.applyForce bot, friend for friend in bot.friends if Spring.isActive

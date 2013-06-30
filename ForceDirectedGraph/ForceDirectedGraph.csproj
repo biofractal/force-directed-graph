@@ -59,7 +59,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="coffee\common\domain.min.js" />
+    <None Include="coffee\common\domain.min.js" />
     <Content Include="Flock.html" />
     <Content Include="css\app.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -76,8 +76,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="coffee\flock.coffee" />
-    <Content Include="coffee\common\domain.coffee" />
+    <None Include="coffee\flock.coffee" />
+    <None Include="coffee\common\domain.coffee" />
     <None Include="coffee\domain\Bot.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
@@ -85,10 +85,10 @@
       <Iced>False</Iced>
       <OutputFolder>..\assets\js\temp</OutputFolder>
     </None>
-    <Content Include="coffee\domain\BotBuilder.coffee" />
-    <Content Include="coffee\domain\Attractor.coffee" />
-    <Content Include="coffee\domain\Repulsor.coffee" />
-    <Content Include="coffee\domain\Animator.coffee" />
+    <None Include="coffee\domain\BotBuilder.coffee" />
+    <None Include="coffee\domain\Attractor.coffee" />
+    <None Include="coffee\domain\Repulsor.coffee" />
+    <None Include="coffee\domain\Animator.coffee" />
     <None Include="coffee\domain\Vector.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
@@ -96,7 +96,7 @@
       <Iced>False</Iced>
       <OutputFolder>..\assets\js\temp</OutputFolder>
     </None>
-    <None Include="coffee\domain\force\Mouse.coffee">
+    <None Include="coffee\domain\Mouse.coffee">
       <Compile>True</Compile>
       <Minify>False</Minify>
       <Bare>False</Bare>
