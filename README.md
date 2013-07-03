@@ -20,6 +20,6 @@ Force Directed Graphs
 
 Electro-Flock
 -------------
-![Alt text](/doc/electro-flock_screenshot.png?raw=true)
+![Alt text](/doc/electro_flock_screenshot.png?raw=true)
 
 
